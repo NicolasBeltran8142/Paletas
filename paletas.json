@@ -1,13 +1,22 @@
 [
-    {
-        "name": "tienda-padelbox",
-        "version": "1.0.0",
-        "scripts": {
-            "build": "node scripts/generate-json.js",
-            "dev": "node scripts/generate-json.js --watch"
-        },
-            "dependencies": {
-                "js-yaml": "^4.1.0"
-        }
-    }
+  {
+    "title": "tomas",
+    "precio": 32131313,
+    "marca": "Siux",
+    "estado": "nueva",
+    "descripcion": "wsfdfsfsefse",
+    "imagen": "/images/300x300-removebg-preview.png",
+    "disponible": true,
+    "slug": "tomas"
+  },
+  {
+    "title": "uhkjbkñjh",
+    "precio": 7897896869,
+    "marca": "Oxdog",
+    "estado": "nueva",
+    "descripcion": "kjhdkfhifjklhfwlfhlwkjfl",
+    "imagen": "/images/300x300-removebg-preview.png",
+    "disponible": true,
+    "slug": "uhkjbkñjh"
+  }
 ]

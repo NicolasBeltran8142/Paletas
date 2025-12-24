@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda PadelBox</title>
     <link rel="stylesheet" href="../CSS/paletas.css">
+    <link rel="stylesheet" href="../CSS/productos.css">
 </head>
 <body>
     <!-- Header -->
@@ -72,19 +73,27 @@
 
     <!-- AGREGAR EL CODIGO DEPENDENDIENDO DE LA PAGINA QUE ESTEMOS TRABAJANDO -->
 
-    <h2>PALETAS</h2>
+    <div class="container">
+        <h2 class="section-title" style="margin-top: 40px;">PALETAS</h2>
 
-    <!-- Muestra todas las paletas, puedes agregar filtros -->
-    <div class="filtros">
-        <button onclick="filtrarPorEstado('todos')">Todas</button>
-        <button onclick="filtrarPorEstado('nueva')">Nuevas</button>
-        <button onclick="filtrarPorEstado('usada')">Usadas</button>
-        <button onclick="filtrarPorEstado('encargo')">Encargo</button>
+        <!-- Muestra todas las paletas, puedes agregar filtros -->
+        <div class="filtros">
+            <button onclick="cambiarFiltro('todos')" class="btn-filtro active" data-filtro="todos">Todas</button>
+            <button onclick="cambiarFiltro('nueva')" class="btn-filtro" data-filtro="nueva">Nuevas</button>
+            <button onclick="cambiarFiltro('usada')" class="btn-filtro" data-filtro="usada">Usadas</button>
+            <button onclick="cambiarFiltro('encargo')" class="btn-filtro" data-filtro="encargo">Encargo</button>
+        </div>
+
+        <div id="contenedor-paletas" class="productos-grid">
+            <!-- Las paletas se cargarán aquí -->
+            <div style="text-align: center; grid-column: 1/-1;">Cargando productos...</div>
+        </div>
     </div>
     
-    <!-- Tipo de paletas -->
+    <!-- Tipo de paletas (Enlaces a páginas específicas) -->
     <section class="brands">
         <div class="container">
+            <h3 class="section-title">Categorías</h3>
             <div class="brands-grid">
                 <a href="paletasNuevas.html" class="brand-card">Nuevas</a>
                 <a href="paletasUsadas.html" class="brand-card">Usadas</a>
@@ -126,13 +135,32 @@
         </div>
     </footer>
 
-    <!-- Muestra todas las paletas, puedes agregar filtros -->
-    <div class="filtros">
-        <button onclick="filtrarPorEstado('todos')">Todas</button>
-        <button onclick="filtrarPorEstado('nueva')">Nuevas</button>
-        <button onclick="filtrarPorEstado('usada')">Usadas</button>
-        <button onclick="filtrarPorEstado('encargo')">Encargo</button>
-    </div>
-    
+    <script src="../js/paletas.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Cargar todas las paletas inicialmente
+            try {
+                const paletas = await cargarPaletas('todos');
+                mostrarPaletas(paletas, 'contenedor-paletas');
+            } catch (e) {
+                console.error(e);
+            }
+        });
+
+        async function cambiarFiltro(estado) {
+            // Actualizar botones activos
+            document.querySelectorAll('.btn-filtro').forEach(btn => {
+                if(btn.dataset.filtro === estado) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+
+            // Cargar y mostrar paletas
+            const contenedor = document.getElementById('contenedor-paletas');
+            contenedor.innerHTML = '<div style="text-align: center; grid-column: 1/-1;">Cargando...</div>';
+
+            const paletas = await cargarPaletas(estado);
+            mostrarPaletas(paletas, 'contenedor-paletas');
+        }
+    </script>
 </body>
 </html>

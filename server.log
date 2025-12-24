@@ -1,0 +1,45 @@
+127.0.0.1 - - [24/Dec/2025 00:09:30] "GET /paletasNuevas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:09:30] "GET /CSS/paletasNuevas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:09:30] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:09:30] "GET /CSS/styles.css HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:09:30] "GET /paletas.json HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:09:30] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:09:30] "GET /images/300x300-removebg-preview.png HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /paletas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /CSS/paletas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /CSS/productos.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /js/paletas.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /paletas.json HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /images/300x300-removebg-preview.png HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /images/placeholder.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /paletasNuevas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /CSS/paletasNuevas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /images/300x300-removebg-preview.png HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:14:40] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:14:40] "GET /images/placeholder.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:14:41] "GET /paletasUsadas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:41] "GET /CSS/paletasUsadas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:41] "GET /paletasEncargo.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:14:41] "GET /CSS/paletasEncargo.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /paletas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /CSS/paletas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /CSS/productos.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /js/paletas.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /paletas.json HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /images/300x300-removebg-preview.png HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /images/placeholder.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /paletasNuevas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:26] "GET /CSS/paletasNuevas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:27] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:19:27] "GET /images/300x300-removebg-preview.png HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:19:27] code 404, message File not found
+127.0.0.1 - - [24/Dec/2025 00:19:27] "GET /images/placeholder.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [24/Dec/2025 00:19:27] "GET /paletasUsadas.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:27] "GET /CSS/paletasUsadas.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:27] "GET /paletasEncargo.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 00:19:27] "GET /CSS/paletasEncargo.css HTTP/1.1" 200 -
