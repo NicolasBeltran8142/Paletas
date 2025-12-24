@@ -6,6 +6,7 @@
     "dev": "node scripts/generate-json.js --watch"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "js-yaml": "^4.1.0"
   }
 }
