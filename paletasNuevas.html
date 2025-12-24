@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paletas Nuevas - Tienda PadelBox</title>
-    <link rel="stylesheet" href="../CSS/paletasNuevas.css">
-    <!-- Si tienes un CSS general, agrega este también -->
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="CSS/paletasNuevas.css">
+    <link rel="stylesheet" href="CSS/productos.css">
 </head>
 <body>
     <!-- Header -->
@@ -115,126 +114,16 @@
     </footer>
 
     <!-- JavaScript para cargar paletas -->
+    <script src="js/paletas.js"></script>
     <script>
-        // Función para cargar paletas NUEVAS
-        async function cargarPaletasNuevas() {
+        document.addEventListener('DOMContentLoaded', async () => {
             try {
-                console.log('🔍 Cargando paletas nuevas...');
-                
-                // IMPORTANTE: Verifica la ruta correcta
-                const response = await fetch('/paletas.json');
-                
-                if (!response.ok) {
-                    throw new Error(`Error HTTP: ${response.status}`);
-                }
-                
-                const paletas = await response.json();
-                console.log('📊 Paletas cargadas:', paletas);
-                
-                // FILTRAR solo paletas con estado "nueva" (singular, no "nuevas")
-                const paletasNuevas = paletas.filter(p => 
-                    p.estado === "nueva" && (p.disponible === undefined || p.disponible === true)
-                );
-                
-                console.log('✅ Paletas nuevas filtradas:', paletasNuevas);
-                
-                mostrarPaletas(paletasNuevas);
-                
-            } catch (error) {
-                console.error('❌ Error cargando paletas:', error);
-                mostrarError();
+                const paletas = await cargarPaletas('nueva');
+                mostrarPaletas(paletas, 'paletas-container');
+            } catch (e) {
+                console.error(e);
             }
-        }
-        
-        // Función para mostrar paletas en la página
-        function mostrarPaletas(paletas) {
-            const container = document.getElementById('paletas-container');
-            
-            if (!container) {
-                console.error('❌ No se encontró el contenedor paletas-container');
-                return;
-            }
-            
-            container.innerHTML = '';
-            
-            if (!paletas || paletas.length === 0) {
-                container.innerHTML = `
-                    <div class="no-productos">
-                        <p>🏸 No hay paletas nuevas disponibles en este momento.</p>
-                        <p>Próximamente agregaremos más productos.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Crear HTML para cada paleta
-            paletas.forEach(paleta => {
-                const badge = '<span class="badge nueva">NUEVA</span>';
-                
-                // Precio formateado
-                const precio = paleta.precio ? 
-                    `$${paleta.precio.toLocaleString('es-AR')}` : 
-                    'Consultar';
-                
-                // Imagen (usar placeholder si no hay)
-                const imagen = paleta.imagen || 'https://via.placeholder.com/300x200?text=Paleta+Padel';
-                
-                const html = `
-                    <div class="producto-card">
-                        ${badge}
-                        <img src="${imagen}" 
-                             alt="${paleta.title || 'Paleta de pádel'}"
-                             loading="lazy">
-                        <div class="producto-info">
-                            <h3>${paleta.title || 'Paleta sin nombre'}</h3>
-                            ${paleta.marca ? `<p class="marca">${paleta.marca}</p>` : ''}
-                            <p class="precio">${precio}</p>
-                            ${paleta.descripcion ? `<p class="descripcion">${paleta.descripcion}</p>` : ''}
-                            <button class="btn-comprar" onclick="consultarPaleta('${paleta.title || ''}', ${paleta.precio || 0})">
-                                Consultar
-                            </button>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += html;
-            });
-        }
-        
-        // Función para mostrar error
-        function mostrarError() {
-            const container = document.getElementById('paletas-container');
-            if (container) {
-                container.innerHTML = `
-                    <div class="no-productos">
-                        <p>⚠️ Error al cargar las paletas.</p>
-                        <p>Por favor, intenta recargar la página.</p>
-                        <button onclick="cargarPaletasNuevas()" style="padding: 10px 20px; margin-top: 10px;">
-                            Reintentar
-                        </button>
-                    </div>
-                `;
-            }
-        }
-        
-        // Función para consultar una paleta
-        function consultarPaleta(nombre, precio) {
-            const precioFormateado = precio ? `$${precio.toLocaleString('es-AR')}` : 'Consultar';
-            
-            const mensaje = `
-                🎾 CONSULTA ENVIADA
-                ------------------
-                Producto: ${nombre}
-                Precio: ${precioFormateado}
-                Estado: Nueva
-                
-                📞 Te contactaremos pronto para brindarte más información.
-            `;
-            
-            alert(mensaje);
-        }
-        
-        // Cargar paletas cuando la página esté lista
-        document.addEventListener('DOMContentLoaded', cargarPaletasNuevas);
+        });
     </script>
 </body>
 </html>
